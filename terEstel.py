@@ -7,9 +7,9 @@ import sys, getopt, os
 
 def main(argv):
     def usage():
-        print ('usage estel.py [-r folder location] [-l folder location]')
+        print ('usage estel.py [-r folder location] [-l folder location] [-c folder location]')
     try:
-        (opts, args) = getopt.getopt(argv[1:], 'r:l:')
+        (opts, args) = getopt.getopt(argv[1:], 'r:l:c:')
     except getopt.GetoptError:
         return usage()
     if not opts:
@@ -32,6 +32,16 @@ def main(argv):
             listPDF.writelines("%s\n" % i for i in PDFList)
             listPDF.close()
             print('OK!')
+        elif k == '-c': #чистим название PDF файлов чертежей (оставляем только EL. номер)
+            os.chdir(v)
+            tempPDFList = estel.pathListPDF(v)
+            for items in tempPDFList:
+                i = 0
+                if items[i:i+3] == 'EL.':
+                    if items [i+13:i+15] == '-0' or items [i+13:i+15] == '-1':
+                        os.rename(items, items[:i+16] + '.pdf')
+                    else:
+                        os.rename(items, items[:i+13] + '.pdf')
 
 if __name__ == '__main__':
     main(sys.argv)
