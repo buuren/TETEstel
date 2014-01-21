@@ -47,14 +47,16 @@ class MainWindow(wx.Frame):
 
 		hboxButtons = wx.BoxSizer(wx.HORIZONTAL)
 		startButton = wx.Button(panel, label = 'Start', size = (70, 30))
-		hboxButtons.Add(startButton, flag = wx.BOTTOM | wx.LEFT, border = 10)
-		vbox.Add(hboxButtons, flag = wx.ALIGN_RIGHT | wx.RIGHT , border = 10)
+		hboxButtons.Add(startButton, flag = wx.ALIGN_BOTTOM | wx.LEFT, border = 10)
+		vbox.Add(hboxButtons, proportion = 1, flag = wx.ALIGN_BOTTOM | wx.ALIGN_RIGHT | wx.RIGHT , border = 10)
+
+		vbox.Add((-1, 10))
 		
 		panel.SetSizer(vbox)
 
 def main():
 	app = wx.App()
-	MainWindow(None, title = 'TET Estel v.0.1')
+	MainWindow(None, title = 'TET Estel v 0.6.145')
 
 	app.MainLoop()
 
