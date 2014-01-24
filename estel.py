@@ -19,7 +19,9 @@ def revSearch(rev):
                 or strings[i] == 'H' or strings[i] == 'I'\
                 or strings[i] == 'J' or strings[i] == 'K'\
                 or strings[i] == 'L' or strings[i] == 'M':
-                if strings[i+1:i+3] == '13' or strings[i+1:i+3] == '12'\
+                if strings[i+1:i+3] == '17' or strings[i+1:i+3] == '16'\
+                    or strings[i+1:i+3] == '15' or strings[i+1:i+3] == '14'\
+                    or strings[i+1:i+3] == '13' or strings[i+1:i+3] == '12'\
                     or strings[i+1:i+3] == '11' or strings[i+1:i+3] == '10'\
                     or strings[i+1:i+3] == '09' or strings[i+1:i+3] == '08'\
                     or strings[i+1:i+3] == '07' or strings[i+1:i+3] == '06':
